@@ -6,6 +6,8 @@ const exitEle = document.querySelector('.word');
 const timerEle = document.querySelector('.timer');
 const buttonControlsEle = document.querySelectorAll(".buttonControls i");
 
+
+
 let count=0;
 let sec=59;
 let cont=0;
@@ -20,7 +22,6 @@ let snakebody=[
 let speedX=0,speedY=0;
 let gameScore=0;
 let setIntervalEle;
-
 
 
 document.addEventListener('keydown', e=> {
@@ -38,6 +39,14 @@ document.addEventListener('keydown', e=> {
 
 let highScore = localStorage.getItem(".highScore") || 0;
 highScoreEle.innerHTML = 'HighScore : '+highScore;
+
+/*const leaderboard = () =>{
+    let username=window.prompt('Ur Name?');
+    highScore = localStorage.getItem(".highScore") || 0;
+    highScoreEle.innerHTML = 'HighScore : '+highScore;
+    leaderboardEle.innerHTML = ajAYusername;
+    console.log(username,highScore);
+}*/
 
 const displayGameOver = () =>{
     clearInterval(setIntervalEle);
@@ -93,7 +102,7 @@ const startGame = () => {
         }
         snakebody[0].x+=speedX;
         snakebody[0].y+=speedY;
-    }
+}
      
     
     playBoard.innerHTML =html;
@@ -116,7 +125,7 @@ const startGame = () => {
     
 }  
 randfood();
-
+//leaderboard();
 setIntervalEle=setInterval(startGame,130);
 document.addEventListener('keydown',snakeControls);
 
